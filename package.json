@@ -1,0 +1,34 @@
+{
+  "name": "kryz-quick-reply",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kryz Quick Reply - local-first reusable messages and text shortcuts for Chrome. A Kryz Digital Software product by Kryz Digital Partners.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs --mode=production",
+    "build:dev": "node scripts/build.mjs --mode=development",
+    "build:e2e": "node scripts/build.mjs --mode=e2e",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "npm run build:e2e && node tests/e2e/run.mjs",
+    "audit:security": "node scripts/security-scan.mjs && node scripts/contrast.mjs",
+    "package": "npm run build && npm run audit:security && node scripts/package.mjs",
+    "check": "npm run typecheck && npm test && npm run build && npm run audit:security"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.3.8",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "esbuild": "0.28.2",
+    "jsdom": "31.0.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.2"
+  }
+}

@@ -1,0 +1,8 @@
+body.popup-page { width: 380px; min-height: 480px; max-height: 600px; background: var(--bg); }
+.popup { display: flex; flex-direction: column; height: 600px; max-height: 600px; }
+.popup-head { display: flex; align-items: center; gap: 6px; padding: 12px 12px 10px; background: var(--surface); }
+.popup-tools { display: grid; gap: 8px; padding: 10px 12px 6px; }
+.popup-tools .segmented { justify-self: start; }
+.popup-body { flex: 1; overflow: auto; padding: 8px 12px 12px; }
+.popup-body .empty { padding: 28px 12px; }
+.popup-foot { border-top: 1px solid var(--border); padding: 10px 12px; background: var(--surface); }

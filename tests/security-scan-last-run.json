@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-25T21:02:54.520Z",
+  "findings": [
+    {
+      "status": "PASS",
+      "check": "Required permissions are minimal",
+      "detail": "activeTab,scripting,storage"
+    },
+    {
+      "status": "PASS",
+      "check": "No install-time host permissions",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "No static content scripts (expander registered per approved site only)",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "No web-accessible resources",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "Not externally connectable (web pages cannot message the extension)",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "CSP has script-src 'self'",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "CSP has object-src 'none'",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "CSP has connect-src 'none'",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "CSP has base-uri 'none'",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "CSP has no unsafe-eval / unsafe-inline / remote sources",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "Production manifest name",
+      "detail": "Kryz Quick Reply"
+    },
+    {
+      "status": "PASS",
+      "check": "Scanned 8 built files for eval/Function/network APIs/remote code",
+      "detail": ""
+    },
+    {
+      "status": "INFO",
+      "check": "URL strings present in bundle (not requests; e.g. React error-doc links, XML namespaces)",
+      "detail": "https://react.dev, http://www.w3.org"
+    },
+    {
+      "status": "PASS",
+      "check": "Scanned 39 source files for HTML injection sinks and logging",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "Secret scan: 97 files, no credentials found",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "npm audit: no high/critical vulnerabilities",
+      "detail": "{\"info\":0,\"low\":0,\"moderate\":0,\"high\":0,\"critical\":0,\"total\":0}"
+    },
+    {
+      "status": "PASS",
+      "check": "Shipped dependency licences reviewed (permissive)",
+      "detail": "react@19.3.1 (MIT), react-dom@19.3.1 (MIT), scheduler@0.28.0 (MIT)"
+    }
+  ]
+}

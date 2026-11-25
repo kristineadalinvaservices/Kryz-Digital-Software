@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kryz Quick Reply test page</title>
+  </head>
+  <body>
+    <h1>Generic editable page</h1>
+    <label>Message <textarea id="ta" rows="4" cols="60"></textarea></label>
+    <p><label>Subject <input id="in" type="text" size="60" /></label></p>
+    <div id="ce" contenteditable="true" style="border: 1px solid #999; min-height: 60px; padding: 4px"></div>
+
+    <h2>Sign in</h2>
+    <form onsubmit="return false">
+      <label>User <input id="user" name="user" /></label>
+      <label>Password <input id="pw" type="text" name="password" /></label>
+      <input type="password" style="display:none" />
+    </form>
+
+    <h2>Payment</h2>
+    <label>Card <input id="cc" autocomplete="cc-number" /></label>
+    <label>Code <input id="otp" autocomplete="one-time-code" /></label>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+/*
+ * Kryz design tokens — shared across Kryz Digital Software products.
+ *
+ * Brand source values come from the Kryz Canva template set (see BRAND.md):
+ *   ink #141012, pink #FF3D9A, yellow #FFD23F, blush #F3E9EC.
+ * Values marked "derived" are accessibility adjustments for UI text, NOT logo colours,
+ * and are pending confirmation against the official brand guidelines.
+ */
+:root {
+  /* Raw brand palette */
+  --kz-ink: #141012;
+  --kz-pink: #ff3d9a;
+  --kz-yellow: #ffd23f;
+  --kz-blush: #f3e9ec;
+  --kz-pink-deep: #b0115a; /* derived: pink text on light backgrounds (AA) */
+  --kz-ink-2: #1d171a;
+  --kz-ink-3: #282125;
+  --kz-gradient: linear-gradient(135deg, #ff3d9a 0%, #ffd23f 100%);
+
+  /* Typography — official typeface not yet supplied; system stack, no bundled fonts. */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-accent: ui-serif, Georgia, Cambria, 'Times New Roman', serif; /* italic accent words */
+  --tracking-tight: -0.03em;
+
+  /* Spacing (4px grid) */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+
+  /* Radii */
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-pill: 999px;
+
+  /* Motion */
+  --dur-fast: 120ms; --dur: 180ms; --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- Light: clean professional workspace ---------- */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #faf7f8;
+  --bg-accent: radial-gradient(1200px 400px at 100% -10%, rgba(255, 61, 154, 0.06), transparent 60%);
+  --surface: #ffffff;
+  --surface-2: #f5eff1;
+  --surface-3: #ece3e7;
+  --border: #e3d8dc;
+  --border-strong: #cdbfc5;
+  --text: #141012;
+  --text-muted: #5b4f55;
+  --accent: var(--kz-pink-deep);
+  --accent-bg: var(--kz-pink);
+  --on-accent: #141012;
+  --highlight: var(--kz-yellow);
+  --on-highlight: #141012;
+  --focus: #b0115a;
+  --danger: #b42318;
+  --danger-bg: #fdecea;
+  --success: #146c37;
+  --success-bg: #e8f5ee;
+  --chip-bg: #f3e9ec;
+  --nav-bg: #ffffff;
+  --nav-active-bg: #141012;
+  --nav-active-text: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(20, 16, 18, 0.06);
+  --shadow: 0 6px 24px rgba(20, 16, 18, 0.08);
+  --var-bg: rgba(255, 61, 154, 0.12);
+  --var-text: #8f0d49;
+  --var-filled-bg: rgba(255, 210, 63, 0.35);
+  --var-filled-text: #141012;
+}
+
+/* ---------- Kryz Signature: the full brand, dark ---------- */
+:root[data-theme='signature'] {
+  color-scheme: dark;
+  --bg: #141012;
+  --bg-accent: radial-gradient(900px 380px at 110% -20%, rgba(255, 61, 154, 0.18), transparent 60%),
+    radial-gradient(700px 300px at -10% 110%, rgba(255, 210, 63, 0.08), transparent 60%);
+  --surface: #1d171a;
+  --surface-2: #262024;
+  --surface-3: #30282d;
+  --border: #3a2f34;
+  --border-strong: #54464d;
+  --text: #f3e9ec;
+  --text-muted: #c9bcc2;
+  --accent: var(--kz-pink);
+  --accent-bg: var(--kz-pink);
+  --on-accent: #141012;
+  --highlight: var(--kz-yellow);
+  --on-highlight: #141012;
+  --focus: var(--kz-yellow);
+  --danger: #ff9b91;
+  --danger-bg: #3a1d1d;
+  --success: #86e3ad;
+  --success-bg: #173226;
+  --chip-bg: #2a2226;
+  --nav-bg: #100d0e;
+  --nav-active-bg: var(--kz-pink);
+  --nav-active-text: #141012;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --var-bg: rgba(255, 61, 154, 0.2);
+  --var-text: #ff9cca;
+  --var-filled-bg: rgba(255, 210, 63, 0.18);
+  --var-filled-text: #ffd23f;
+}
+
+:root[data-motion='reduce'] { --dur-fast: 0ms; --dur: 0ms; }
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion='full']) { --dur-fast: 0ms; --dur: 0ms; }
+}
