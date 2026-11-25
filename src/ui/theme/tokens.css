@@ -1,32 +1,35 @@
 /*
- * Kryz design tokens — shared across Kryz Digital Software products.
- *
- * Brand source values come from the Kryz Canva template set (see BRAND.md):
- *   ink #141012, pink #FF3D9A, yellow #FFD23F, blush #F3E9EC.
- * Values marked "derived" are accessibility adjustments for UI text, NOT logo colours,
- * and are pending confirmation against the official brand guidelines.
+ * Kryz design tokens, shared across Kryz Digital Software products.
+ * Source of truth: Kryz Brand Guidelines v2 (20 Nov 2026), copy in brand/source/Kryz-Brand-Guidelines.md.
+ * Values marked "derived" are accessibility adjustments for small UI text in Light mode only,
+ * never applied to the logo.
  */
 :root {
-  /* Raw brand palette */
-  --kz-ink: #141012;
-  --kz-pink: #ff3d9a;
-  --kz-yellow: #ffd23f;
-  --kz-blush: #f3e9ec;
-  --kz-pink-deep: #b0115a; /* derived: pink text on light backgrounds (AA) */
-  --kz-ink-2: #1d171a;
-  --kz-ink-3: #282125;
-  --kz-gradient: linear-gradient(135deg, #ff3d9a 0%, #ffd23f 100%);
+  /* Brand palette (Guidelines v2, section 3) */
+  --kz-black: #141012;        /* Kryz Black: main background */
+  --kz-plum: #1e181b;         /* Plum Surface: cards and panels */
+  --kz-pink: #ff3d9a;         /* Neon Pink: buttons, highlights, glow */
+  --kz-yellow: #ffd23f;       /* Bright Yellow: labels, numbers, outlines */
+  --kz-soft-white: #f3e9ec;   /* Soft White: main text on dark */
+  --kz-warm-white: #fff9f7;   /* Warm White: logo wordmark on dark; light surfaces (never pure white) */
+  --kz-rose-gray: #bdaeb4;    /* Rose Gray: body text on dark */
+  --kz-pink-deep: #b0115a;    /* derived: pink text on light backgrounds (AA) */
+  --kz-plum-2: #282125;
+  --kz-gradient: linear-gradient(135deg, #ff3d9a 0%, #ffd23f 100%); /* UI accent bars */
+  --kz-signature-gradient: linear-gradient(135deg, #ffd23f 0%, #141012 50%, #ff3d9a 100%); /* special graphics only */
+  --kz-glow: 0 0 24px rgba(255, 61, 154, 0.35);
 
-  /* Typography — official typeface not yet supplied; system stack, no bundled fonts. */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-accent: ui-serif, Georgia, Cambria, 'Times New Roman', serif; /* italic accent words */
-  --tracking-tight: -0.03em;
+  /* Typography (Guidelines v2, section 4), bundled locally from @fontsource (SIL OFL 1.1) */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;     /* body, buttons */
+  --font-display: 'Manrope', 'Inter', system-ui, sans-serif;                                /* headlines, ExtraBold */
+  --font-accent: 'Instrument Serif', Georgia, 'Times New Roman', serif;                     /* italic accent words, pink */
+  --tracking-tight: -0.02em;
 
   /* Spacing (4px grid) */
   --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
 
-  /* Radii */
-  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-pill: 999px;
+  /* Radii (Guidelines v2, section 5: ~22px cards, pill buttons) */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 22px; --r-xl: 26px; --r-pill: 999px;
 
   /* Motion */
   --dur-fast: 120ms; --dur: 180ms; --ease: cubic-bezier(.2,.7,.2,1);
@@ -36,11 +39,11 @@
 :root,
 :root[data-theme='light'] {
   color-scheme: light;
-  --bg: #faf7f8;
-  --bg-accent: radial-gradient(1200px 400px at 100% -10%, rgba(255, 61, 154, 0.06), transparent 60%);
-  --surface: #ffffff;
-  --surface-2: #f5eff1;
-  --surface-3: #ece3e7;
+  --bg: #f6eff1;
+  --bg-accent: radial-gradient(1200px 400px at 100% -10%, rgba(255, 61, 154, 0.07), transparent 60%);
+  --surface: var(--kz-warm-white);
+  --surface-2: #f1e8eb;
+  --surface-3: #e8dde1;
   --border: #e3d8dc;
   --border-strong: #cdbfc5;
   --text: #141012;
@@ -55,10 +58,10 @@
   --danger-bg: #fdecea;
   --success: #146c37;
   --success-bg: #e8f5ee;
-  --chip-bg: #f3e9ec;
-  --nav-bg: #ffffff;
+  --chip-bg: #f1e8eb;
+  --nav-bg: var(--kz-warm-white);
   --nav-active-bg: #141012;
-  --nav-active-text: #ffffff;
+  --nav-active-text: var(--kz-warm-white);
   --shadow-sm: 0 1px 2px rgba(20, 16, 18, 0.06);
   --shadow: 0 6px 24px rgba(20, 16, 18, 0.08);
   --var-bg: rgba(255, 61, 154, 0.12);
@@ -73,13 +76,13 @@
   --bg: #141012;
   --bg-accent: radial-gradient(900px 380px at 110% -20%, rgba(255, 61, 154, 0.18), transparent 60%),
     radial-gradient(700px 300px at -10% 110%, rgba(255, 210, 63, 0.08), transparent 60%);
-  --surface: #1d171a;
+  --surface: var(--kz-plum);
   --surface-2: #262024;
   --surface-3: #30282d;
   --border: #3a2f34;
   --border-strong: #54464d;
-  --text: #f3e9ec;
-  --text-muted: #c9bcc2;
+  --text: var(--kz-soft-white);
+  --text-muted: var(--kz-rose-gray);
   --accent: var(--kz-pink);
   --accent-bg: var(--kz-pink);
   --on-accent: #141012;
@@ -91,7 +94,7 @@
   --success: #86e3ad;
   --success-bg: #173226;
   --chip-bg: #2a2226;
-  --nav-bg: #100d0e;
+  --nav-bg: var(--kz-black);
   --nav-active-bg: var(--kz-pink);
   --nav-active-text: #141012;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);

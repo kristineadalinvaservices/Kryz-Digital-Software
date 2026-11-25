@@ -3,8 +3,8 @@
 Public release is **blocked** until every item is checked and the product owner signs off.
 
 ## Mandatory security gate
-- [x] `npm run check` passes (typecheck, unit, build, static security gate, contrast) — 2026-11-25
-- [x] `npm run test:e2e` passes on the release commit — 29/29, 2026-11-25
+- [x] `npm run check` passes (typecheck, unit, build, static security gate, contrast), 2026-11-25
+- [x] `npm run test:e2e` passes on the release commit: 29/29, 2026-11-25
 - [x] No known unresolved critical/high vulnerabilities (`npm audit`: 0)
 - [x] Permissions justified (PERMISSIONS.md); production manifest has no host permissions
 - [x] Sensitive-field protections tested (unit + e2e)
@@ -12,7 +12,7 @@ Public release is **blocked** until every item is checked and the product owner 
 - [x] External network requests reviewed: none
 - [x] Import/export and deletion verified
 - [x] Known limitations documented (TESTING.md, About page)
-- [ ] **Official branding verified** — logo files missing
+- [x] Official branding verified: Guidelines v2 logo, icons, colours and fonts integrated; visually checked in both themes (2026-11-25). Owner sign-off on screenshots still recommended
 - [ ] Manual checklist (TESTING.md) passed on Windows and macOS, incl. Gmail and LinkedIn
 - [ ] Optional permission prompt / deny / revoke verified manually
 - [ ] Independent human security review completed

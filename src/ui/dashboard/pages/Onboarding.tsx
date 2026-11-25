@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { POLICY_VERSIONS, PRODUCT } from '../../../shared/constants';
 import { addStarterTemplates, consentIsCurrent, recordConsent } from '../../../storage/repository';
-import { BrandLockup, BrandLogo, ParentBadge } from '../../components/Brand';
+import { BrandLogo } from '../../components/Brand';
 import { Icon } from '../../components/icons';
 import { useToast } from '../../components/ui';
 import { navigate } from '../App';
@@ -67,19 +67,17 @@ export function OnboardingPage({ store, adapter }: PageProps) {
   return (
     <div className="welcome">
       <section className="welcome-hero" aria-labelledby="welcome-h">
-        <div className="row" style={{ marginBottom: 28, position: 'relative', zIndex: 1 }}>
-          <BrandLockup />
-          <span className="spacer" />
-          <ParentBadge />
+        <div className="hero-logo">
+          <BrandLogo variant="full" height={150} on="dark" />
         </div>
-        <BrandLogo variant="full" height={56} />
+        <p className="eyebrow">{PRODUCT.name}</p>
         <h1 id="welcome-h">
           Reply faster.
           <br />
           Stay <span className="accent-word">in control.</span>
         </h1>
         <p style={{ fontSize: 17, maxWidth: 560, marginTop: 16 }}>
-          {PRODUCT.name} saves the messages you write again and again — intros, follow-ups, invoices, interview invites — so you can personalize and insert them in seconds.
+          {PRODUCT.name} saves the messages you write again and again (intros, follow ups, invoices, interview invites) so you can personalize and insert them in seconds.
         </p>
         <p className="tag" style={{ margin: 0 }}>{PRODUCT.tagline}</p>
       </section>

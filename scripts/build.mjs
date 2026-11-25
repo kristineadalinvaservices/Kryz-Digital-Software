@@ -6,7 +6,7 @@
  */
 import { build as viteBuild } from 'vite';
 import { build as esbuild } from 'esbuild';
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -38,15 +38,31 @@ for (const [entry, out] of [
   });
 }
 
-// ---------- Icons from the official brand symbol (never generated from anything else) ----------
-const logoDir = resolve(root, 'brand/logo');
-const symbol = existsSync(logoDir) ? readdirSync(logoDir).find((f) => /^symbol-light\.(png|svg)$/.test(f)) : undefined;
+// ---------- Icons: official icon files (brand/icons), copied unmodified ----------
+const iconDir = resolve(root, 'brand/icons');
 let icons = null;
-if (symbol) {
-  const { renderIcons } = await import('./icons.mjs');
-  icons = await renderIcons(resolve(logoDir, symbol), resolve(outDir, 'icons'));
+if (existsSync(iconDir) && [16, 32, 48, 128].every((n) => existsSync(resolve(iconDir, `icon-${n}.png`)))) {
+  mkdirSync(resolve(outDir, 'icons'), { recursive: true });
+  icons = {};
+  for (const n of [16, 32, 48, 128]) {
+    copyFileSync(resolve(iconDir, `icon-${n}.png`), resolve(outDir, `icons/icon-${n}.png`));
+    icons[String(n)] = `icons/icon-${n}.png`;
+  }
 } else {
-  console.warn('\n⚠  Official brand symbol not found (brand/logo/symbol-light.png|svg). Built WITHOUT extension icons; Chrome will show a default letter icon.\n');
+  console.warn('\n⚠  Official icons not found (brand/icons/icon-16|32|48|128.png). Built WITHOUT extension icons.\n');
+}
+
+// ---------- Third-party licence notices (MIT/OFL require the notice to travel with the code/fonts) ----------
+mkdirSync(resolve(outDir, 'licenses'), { recursive: true });
+for (const [pkgName, file] of [
+  ['react', 'react-LICENSE.txt'],
+  ['react-dom', 'react-dom-LICENSE.txt'],
+  ['scheduler', 'scheduler-LICENSE.txt'],
+  ['@fontsource/manrope', 'manrope-OFL.txt'],
+  ['@fontsource/inter', 'inter-OFL.txt'],
+  ['@fontsource/instrument-serif', 'instrument-serif-OFL.txt'],
+]) {
+  copyFileSync(resolve(root, 'node_modules', pkgName, 'LICENSE'), resolve(outDir, 'licenses', file));
 }
 
 // ---------- Manifest ----------

@@ -3,12 +3,22 @@
 Product: **Kryz Quick Reply** · Parent: **Kryz Digital Partners** · Ecosystem: **Kryz Digital Software**
 Tagline: *Built for productivity. Designed for privacy.* · Commitment: *Your Data. Your Control.*
 
-## Sources used (2026-11-25)
-The official brand guidelines and logo were **not supplied**. Discovery checked the empty project directory, Google Drive and Canva.
-- **Canva "Kryz Template" set** (LinkedIn Post, Instagram Post/Story, LinkedIn Banner, Facebook Cover): ink `#141012`, pink `#FF3D9A`, yellow `#FFD23F`, blush text `#F3E9EC`; bold sans headlines with tight tracking (−0.04em) and an *italic serif accent word*; a yellow tag with ink caps reading "KRYZ DIGITAL PARTNERS"; placeholder text "Kryz logo here".
-- **Canva "Kristine's BRAND ARCHETYPES"**: Hero (primary), Sage (secondary), Outlaw (accent). Visual language "black base with neon pink and yellow"; lists `#000000`, `#FF2D95`, `#FFE600`.
+## Source of truth
+**Kryz Brand Guidelines v2 (20 November 2026)**, supplied by the owner on 2026-11-25 with the official logo pack. Originals are kept unmodified in `brand/source/` (`Kryz-Brand-Guidelines.md`, `Kryz-Logo-SVG-Code.md`, all PNG/SVG/ICO files). v1 (pink and gold) is retired: no gold, blush or beige except the Dark Gold used inside the official light-background logo file.
 
-**Conflict to resolve:** the two sources give slightly different hex values. The build uses the Kryz Template values (newer, Kryz-specific). Confirm which set is official.
+Earlier provisional values from the Canva templates matched v2 for black, pink and yellow; the Brand Archetypes deck values (`#000000`, `#FF2D95`, `#FFE600`) are **not** used.
+
+## Logo files in use (`brand/logo/`, bundled)
+| Where | File | Why |
+|---|---|---|
+| Onboarding hero (always dark), About in Signature theme | `kryz-logo-3d-glow-for-dark.png` | Guideline main version on dark |
+| About in Light theme | `kryz-logo-3d-for-light.png` | Guideline light-background version |
+| Popup header, sidebar, empty states (Light) | `kryz-mark.svg` | Flat mark for small sizes |
+| Popup header, sidebar, empty states (Signature) | `kryz-mark-3d.svg` | 3D mark for dark backgrounds |
+| Extension icons 16/32/48 | from official `favicon.ico` (exact embedded sizes) | Official website icon |
+| Extension icon 128 | official `kryz-website-icon-512.png` scaled down (Lanczos, no other change) | Official website icon |
+
+The full-logo **SVG** files are not bundled: their text loads Manrope/Instrument Serif from Google Fonts, which the extension blocks (`connect-src 'none'`) and which would be a remote request. The guidelines direct PNG use where fonts can't load. Sizes respect the guideline minimums (mark ≥ 24 px tall, full logo ≥ 140 px wide).
 
 ## How the archetypes show up
 - **Hero** — confident outcome headlines ("Reply faster. Stay *in control.*"), strong primary pink actions, visible progress (Analytics "momentum").
@@ -16,18 +26,21 @@ The official brand guidelines and logo were **not supplied**. Discovery checked 
 - **Outlaw** — the italic serif accent word breaking the sans headline, neon-on-ink Signature theme, myth-busting copy ("No tracking").
 
 ## Tokens (`src/ui/theme/tokens.css`)
-Raw: `--kz-ink #141012`, `--kz-pink #FF3D9A`, `--kz-yellow #FFD23F`, `--kz-blush #F3E9EC`, `--kz-gradient pink→yellow`.
-Derived for accessibility (UI text only, never logo): `--kz-pink-deep #B0115A` (pink text on white, 6.8:1).
+Guidelines v2: Kryz Black `#141012`, Plum Surface `#1E181B`, Neon Pink `#FF3D9A`, Bright Yellow `#FFD23F`, Soft White `#F3E9EC`, Warm White `#FFF9F7`, Rose Gray `#BDAEB4`; signature gradient yellow to black to pink (special graphics only); soft pink glow; ~22 px card radius; pill buttons.
+Derived for accessibility (Light theme UI text only, never logo): `--kz-pink-deep #B0115A` (pink text on Warm White, AA). Light theme uses Warm White surfaces so there are no pure white or pure black backgrounds.
 Semantic tokens per theme: `--bg --surface --surface-2/3 --border --text --text-muted --accent --accent-bg --on-accent --highlight --focus --danger --success`, spacing `--sp-*`, radii `--r-*`, motion `--dur*`.
 
 ## Themes
-- **Light** — warm off-white `#FAF7F8`, white cards, ink text, pink primary buttons with ink text, deep-pink links.
-- **Kryz Signature** — ink `#141012` base with pink/yellow radial glows, ink cards, blush text, neon pink accents, yellow focus rings, pink active nav, gradient bars. Not an inversion of Light.
-- **System** — follows the OS; dark → Kryz Signature. Switches live.
+- **Light**: blush-neutral page `#F6EFF1`, Warm White cards, Kryz Black text, Neon Pink primary buttons with black text, deep-pink links and accent words.
+- **Kryz Signature**: Kryz Black base with pink/yellow glows, Plum Surface cards, Soft White text, Rose Gray body text, Neon Pink accents and active nav, Bright Yellow numbers and focus rings, pink glow on primary hover.
+- **System**: follows the OS; dark → Kryz Signature. Switches live.
 All text pairs pass WCAG 2.2 AA (`node scripts/contrast.mjs`).
 
-## Typography
-Official typeface unknown → `system-ui` stack, no bundled fonts (no licensing risk). Accent words use `ui-serif/Georgia` italic. Replace `--font-sans`/`--font-accent` when the licensed brand fonts are supplied (bundle locally, check licence).
+## Typography (bundled locally, SIL OFL 1.1, notices in `dist/licenses/`)
+Manrope ExtraBold for headlines and product name; Instrument Serif italic for one or two pink accent words; Inter for body and buttons. Latin subsets only, served from the extension (no Google Fonts requests).
 
-## Logo
-See `brand/README.md`. `BrandLogo`/`BrandLockup` render the official files in: popup header, dashboard sidebar, onboarding/privacy onboarding, About, empty states; icons generated at build. If missing, **no mark is shown** — only the product name as text. Store promotional assets: docs/store/PROMO-ASSETS.md.
+## Voice in UI copy
+Lead with the outcome, honest, no made up numbers, **no dashes** in user-facing copy, no emojis.
+
+## Logo placement
+`BrandLogo`/`BrandLockup` (`src/ui/components/Brand.tsx`) render the official files in: toolbar icon, popup header, dashboard sidebar, onboarding (privacy onboarding is the same screen), About, empty states. Future authentication screens must reuse these components. Store assets: docs/store/PROMO-ASSETS.md.

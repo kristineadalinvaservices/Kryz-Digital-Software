@@ -34,10 +34,10 @@ Out (later): cloud sync, accounts, AI writing, team libraries, billing, Firefox/
 Local-only data; no network; least privilege; WCAG 2.2 AA contrast; keyboard operable; reduced motion; strict TypeScript; minimal dependencies (React only at runtime).
 
 ## Assumptions
-- Brand colours taken from the Kryz Canva template set; typography not supplied → system font stack (see BRAND.md).
+- Brand follows Kryz Brand Guidelines v2 (supplied 2026-11-25).
 - "Categories" are implemented as folders; tags provide cross-cutting grouping.
 - Time saved = words inserted ÷ user's typing speed (default 40 WPM).
 - No paid limits are active; `entitlements` are deferred to Phase "Monetization" (ROADMAP.md).
 
 ## Open items for the product owner
-Official logo files and brand guidelines · approved security contact and company contact details · legal review of Privacy Policy and Terms · confirmation of colour values (two sources differ, see BRAND.md) · approval before any store submission.
+Approved security contact and company contact details · legal review of Privacy Policy and Terms · approval before any store submission.

@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25T20:59:04.270Z",
+  "date": "2026-11-25T22:25:29.665Z",
   "chromium": "chromium",
   "passed": 29,
   "failed": 0,
@@ -7,59 +7,59 @@
     {
       "name": "Onboarding opens automatically on install",
       "status": "pass",
-      "ms": 152
+      "ms": 169
     },
     {
       "name": "Consent checkboxes are not preselected and gate \"Get started\"",
       "status": "pass",
-      "ms": 148
+      "ms": 149
     },
     {
       "name": "Accepting records policy versions + dates and adds optional starter templates",
       "status": "pass",
-      "ms": 161,
+      "ms": 187,
       "note": "13 templates; privacy 2026-11-25-draft"
     },
     {
       "name": "Legal documents render from bundled drafts",
       "status": "pass",
-      "ms": 202
+      "ms": 272
     },
     {
       "name": "Create templates (with and without variables)",
       "status": "pass",
-      "ms": 283
+      "ms": 346
     },
     {
       "name": "Duplicate shortcuts are detected in the editor",
       "status": "pass",
-      "ms": 33
+      "ms": 41
     },
     {
       "name": "Search filters the template list",
       "status": "pass",
-      "ms": 38
+      "ms": 40
     },
     {
       "name": "Theme: Light → Kryz Signature applies instantly and persists without flash",
       "status": "pass",
-      "ms": 503
+      "ms": 598
     },
     {
       "name": "System theme follows OS dark mode → Kryz Signature",
       "status": "pass",
-      "ms": 94
+      "ms": 91
     },
     {
       "name": "Enable shortcuts for the test site (registers expander only there)",
       "status": "pass",
-      "ms": 104,
-      "note": "http://localhost:38975/*"
+      "ms": 93,
+      "note": "http://localhost:41191/*"
     },
     {
       "name": "Expander: /plain + Tab expands in a textarea",
       "status": "pass",
-      "ms": 315
+      "ms": 339
     },
     {
       "name": "Expander: undo (Ctrl+Z) restores the typed shortcut",
@@ -70,12 +70,12 @@
     {
       "name": "Expander: variables open a personalization panel; inserted text is correct",
       "status": "pass",
-      "ms": 414
+      "ms": 423
     },
     {
       "name": "Expander: contenteditable editor",
       "status": "pass",
-      "ms": 214
+      "ms": 216
     },
     {
       "name": "Expander: Escape dismisses; Tab then behaves normally",
@@ -85,66 +85,66 @@
     {
       "name": "Expander never operates in password field",
       "status": "pass",
-      "ms": 200
+      "ms": 199
     },
     {
       "name": "Expander never operates in username in sign-in form",
       "status": "pass",
-      "ms": 202
+      "ms": 201
     },
     {
       "name": "Expander never operates in payment card field",
       "status": "pass",
-      "ms": 199
+      "ms": 205
     },
     {
       "name": "Expander never operates in one-time code field",
       "status": "pass",
-      "ms": 200
+      "ms": 196
     },
     {
       "name": "Usage is recorded locally and shown in Analytics",
       "status": "pass",
-      "ms": 108,
+      "ms": 103,
       "note": "3 uses recorded"
     },
     {
       "name": "Popup lists templates and inserts into the focused page field",
       "status": "pass",
-      "ms": 5270,
+      "ms": 5309,
       "note": "openPopup unavailable in headless; popup page opened in a background tab, Insert used on the active test tab"
     },
     {
       "name": "Import rejects malicious content safely (prototype pollution, oversized, wrong format)",
       "status": "pass",
-      "ms": 1573
+      "ms": 1581
     },
     {
       "name": "Export library produces a valid file",
       "status": "pass",
-      "ms": 940,
+      "ms": 931,
       "note": "16 templates exported"
     },
     {
       "name": "Data persists after browser restart",
       "status": "pass",
-      "ms": 492,
+      "ms": 576,
       "note": "16 templates after restart"
     },
     {
       "name": "Privacy Center shows verified status and site access",
       "status": "pass",
-      "ms": 135
+      "ms": 181
     },
     {
       "name": "Removing a site disables expansion there immediately",
       "status": "pass",
-      "ms": 431
+      "ms": 2527
     },
     {
       "name": "Delete all data requires typed confirmation and erases everything",
       "status": "pass",
-      "ms": 2089
+      "ms": 3578
     },
     {
       "name": "Extension pages produced no CSP violations",

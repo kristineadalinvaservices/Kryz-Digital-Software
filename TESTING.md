@@ -6,7 +6,7 @@
 | Type check | `npm run typecheck` | Pass |
 | Unit (Vitest + jsdom) | `npm test` | **58/58 pass** — variables, shortcuts, validation/import, messages, analytics, repository CRUD/trash/folders/consent/import-export/delete-all, migrations, field safety (17 field cases + popup insert function), search/sort |
 | End-to-end (real extension in Chromium) | `npm run test:e2e` | **29/29 pass** — report: `tests/e2e/last-run.json`, screenshots: `tests/e2e/screenshots/` |
-| Security gate | `npm run audit:security` | **16/16 pass**, 19/19 contrast pairs pass |
+| Security gate | `npm run audit:security` | **19/19 pass**, 27/27 contrast pairs pass |
 
 E2E covers: install → onboarding; unchecked consents; consent recording; legal pages; create templates; duplicate shortcut detection; search; theme switch, persistence and no-flash; System → Signature; enabling a site registers the expander only there; expansion in textarea/input/contenteditable; undo; variables panel; Esc; refusal in password, sign-in username, card and OTP fields; analytics; popup list + insert into the active tab; malicious/oversized/wrong-format import; export; restart persistence; Privacy Center; removing a site stops expansion; delete-all erases storage; no CSP violations; zero external network requests.
 
@@ -18,7 +18,7 @@ E2E covers: install → onboarding; unchecked consents; consent recording; legal
 ## Manual checklist (run on Chrome stable, Windows or macOS, before each release)
 Record date, Chrome version, OS, tester and pass/fail in `docs/RELEASE-READINESS.md`.
 1. Load `dist/` unpacked; welcome opens; both consents unchecked; links open Privacy Policy and Terms.
-2. Pin the extension; toolbar icon shows the official symbol (after logo is installed) and is legible at 16 px.
+2. Pin the extension; toolbar icon shows the official Kryz icon and is legible at 16 px on light and dark Chrome themes.
 3. Popup: search, filters, Copy (paste elsewhere), Insert into a Google Docs-free plain textarea (e.g. a contact form) and into Gmail compose.
 4. Variables: personalize, preview, Insert disabled until all filled.
 5. Shortcuts: from popup on mail.google.com click **Turn on** → Settings → **Allow on this site** → Chrome prompt → Allow. Type `/intro` + Tab in Gmail compose body; in LinkedIn message box; confirm text and cursor position; Ctrl/Cmd+Z.

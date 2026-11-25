@@ -1,14 +1,9 @@
-# Official brand assets (required)
+# Official brand assets
 
-Place the **official, approved** Kryz Digital Partners logo files here. Do not create, trace, recolor or regenerate them.
+Source: **Kryz Brand Guidelines v2 (20 Nov 2026)** and logo pack, supplied by the owner on 2026-11-25.
 
-| File | Use |
-|---|---|
-| `logo-full-light.svg` (or `.png`) | Full logo for light backgrounds (Light theme: onboarding, About) |
-| `logo-full-dark.svg` (or `.png`) | Full logo for dark backgrounds (Kryz Signature theme, onboarding hero) |
-| `symbol-light.svg` (or `.png`) | Brand symbol for light backgrounds: popup header, sidebar, empty states, **and the source for extension icons** |
-| `symbol-dark.svg` (or `.png`) | Brand symbol for dark backgrounds |
+- `source/`: the complete original pack, unmodified (guidelines, SVG code doc, all logo, mark, app icon and website icon files).
+- `logo/`: the four files the extension bundles (copied unmodified): `kryz-logo-3d-glow-for-dark.png`, `kryz-logo-3d-for-light.png`, `kryz-mark.svg`, `kryz-mark-3d.svg`. Only put files here that the UI uses; everything in this folder is bundled.
+- `icons/`: extension icons. `icon-16/32/48.png` are the exact images embedded in the official `favicon.ico`; `icon-128.png` is the official `kryz-website-icon-512.png` scaled down. The build copies these unchanged into `dist/icons/`.
 
-PNG sources should be at least 512×512 with a transparent background. After adding files, run `npm run build`. The build renders `icons/icon-16|32|48|128.png` from `symbol-light` using `object-fit: contain` (proportions preserved, no artwork added). Check the 16 px icon by eye; if the guidelines provide a dedicated small-size mark, supply that as `symbol-light`.
-
-Status (2026-11-25): **missing.** Searched the project, Google Drive and Canva; the Kryz Canva templates contain only a "Kryz logo here" placeholder.
+Never redraw, recolor, stretch or regenerate these files. If the guidelines change, replace the files from the new official pack and rebuild.

@@ -5,9 +5,9 @@
 | Area | Status |
 |---|---|
 | Core features (templates, variables, copy/insert, shortcuts, analytics, themes, onboarding, Privacy Center) | Working; automated tests pass (58 unit, 29 e2e) |
-| Security gate (static) | 16/16 pass; 0 npm vulnerabilities; strict CSP; no network; no remote code |
-| Accessibility | Contrast 19/19 AA; keyboard + focus implemented; screen-reader pass **not done** |
-| Branding | **Blocked:** official logo files and guidelines missing; colour values need confirmation |
+| Security gate (static) | 19/19 pass; 0 npm vulnerabilities; strict CSP; no network; no remote code |
+| Accessibility | Contrast 27/27 AA; keyboard + focus implemented; screen-reader pass **not done** |
+| Branding | Official logo, icons, colours and fonts (Guidelines v2) integrated and visually checked; owner sign-off pending |
 | Real-site compatibility | **Not verified** on Gmail/LinkedIn (manual test needed) |
 | Permission prompt/revoke UX | Implemented; **manual verification pending** |
 | Legal | Drafts only; **legal review + owner approval pending**; public policy URL needed |

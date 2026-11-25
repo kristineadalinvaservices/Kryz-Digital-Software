@@ -74,7 +74,7 @@ export function AnalyticsPage({ store, adapter }: PageProps) {
               <ol style={{ paddingLeft: 18, margin: 0 }}>
                 {s.topTemplates.map((t) => (
                   <li key={t.id} style={{ margin: '6px 0' }}>
-                    <strong>{t.title}</strong> <span className="muted">— {t.count}×</span>
+                    <strong>{t.title}</strong> <span className="muted">· used {t.count}×</span>
                   </li>
                 ))}
               </ol>

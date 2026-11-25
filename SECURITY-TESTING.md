@@ -1,6 +1,6 @@
 # Security testing report
 
-Build: v0.1.0 · Date: 2026-11-25 · Environment: Linux container, Node 22, Chromium (Playwright 1.63, new headless). Results below are copied from real runs (`tests/e2e/last-run.json`, `tests/security-scan-last-run.json`). Not an independent audit.
+Build: v0.1.0 (official branding) · Date: 2026-11-25 · Environment: Linux container, Node 22, Chromium (Playwright 1.63, new headless). Results below are copied from real runs (`tests/e2e/last-run.json`, `tests/security-scan-last-run.json`). Not an independent audit.
 
 ## Static security gate (`npm run audit:security` on production `dist/`)
 | Status | Check | Detail |
@@ -19,9 +19,12 @@ Build: v0.1.0 · Date: 2026-11-25 · Environment: Linux container, Node 22, Chro
 | PASS | Scanned 8 built files for eval/Function/network APIs/remote code |  |
 | INFO | URL strings present in bundle (not requests; e.g. React error-doc links, XML namespaces) | https://react.dev, http://www.w3.org |
 | PASS | Scanned 39 source files for HTML injection sinks and logging |  |
-| PASS | Secret scan: 70 files, no credentials found |  |
+| PASS | Secret scan: 105 files, no credentials found |  |
 | PASS | npm audit: no high/critical vulnerabilities | {"info":0,"low":0,"moderate":0,"high":0,"critical":0,"total":0} |
-| PASS | Shipped dependency licences reviewed (permissive) | react@19.3.1 (MIT), react-dom@19.3.1 (MIT), scheduler@0.28.0 (MIT) |
+| PASS | Third-party licence notices shipped in dist/licenses |  |
+| PASS | Brand fonts bundled locally (10 files, no remote font loading) |  |
+| PASS | Official extension icons 16/32/48/128 present |  |
+| PASS | Shipped dependency licences reviewed (permissive) | @fontsource/instrument-serif@5.3.0 (OFL-1.1), @fontsource/inter@5.3.0 (OFL-1.1), @fontsource/manrope@5.3.0 (OFL-1.1), react@19.3.1 (MIT), re |
 
 ## Dynamic tests (`npm run test:e2e`, minified build + test-only localhost permission)
 | # | Test | Result | Note |
@@ -35,7 +38,7 @@ Build: v0.1.0 · Date: 2026-11-25 · Environment: Linux container, Node 22, Chro
 | 7 | Search filters the template list | PASS |  |
 | 8 | Theme: Light → Kryz Signature applies instantly and persists without flash | PASS |  |
 | 9 | System theme follows OS dark mode → Kryz Signature | PASS |  |
-| 10 | Enable shortcuts for the test site (registers expander only there) | PASS | http://localhost:38975/* |
+| 10 | Enable shortcuts for the test site (registers expander only there) | PASS | http://localhost:41191/* |
 | 11 | Expander: /plain + Tab expands in a textarea | PASS |  |
 | 12 | Expander: undo (Ctrl+Z) restores the typed shortcut | PASS | "Hi /plain" |
 | 13 | Expander: variables open a personalization panel; inserted text is correct | PASS |  |
@@ -60,7 +63,7 @@ Build: v0.1.0 · Date: 2026-11-25 · Environment: Linux container, Node 22, Chro
 Prototype pollution (`__proto__`, nested `constructor.prototype`), oversized import, wrong format, HTML/script kept as inert text, control-character stripping, ID/shortcut sanitisation, unsafe URL schemes (`javascript:`, `data:`, `file:`), runtime message allow-list (9 malformed payloads rejected), 17 sensitive/non-sensitive field classifications for both the expander and the injected popup function, consent gating, migration never downgrades newer data.
 
 ## Accessibility contrast (`scripts/contrast.mjs`)
-19/19 token pairs meet WCAG 2.2 AA (lowest: Signature pink on card 5.37:1).
+27/27 token pairs meet WCAG 2.2 AA with Brand Guidelines v2 colours (lowest: 5.31:1).
 
 ## Findings and status
 | ID | Severity | Finding | Status |

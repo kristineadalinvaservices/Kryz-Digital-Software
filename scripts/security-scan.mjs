@@ -106,7 +106,14 @@ const lock = JSON.parse(readFileSync(join(root, 'package-lock.json'), 'utf8'));
 const prodLicenses = Object.entries(lock.packages)
   .filter(([k, v]) => k.startsWith('node_modules/') && !v.dev)
   .map(([k, v]) => `${k.replace('node_modules/', '')}@${v.version} (${v.license ?? 'unknown'})`);
-const badLicense = prodLicenses.filter((l) => !/\((MIT|ISC|BSD-2-Clause|BSD-3-Clause|Apache-2.0|0BSD)\)/.test(l));
+const badLicense = prodLicenses.filter((l) => !/\((MIT|ISC|BSD-2-Clause|BSD-3-Clause|Apache-2.0|0BSD|OFL-1.1)\)/.test(l));
+for (const f of ['react-LICENSE.txt', 'manrope-OFL.txt', 'inter-OFL.txt', 'instrument-serif-OFL.txt'])
+  existsSync(join(dist, 'licenses', f)) ? null : add('FAIL', `Licence notice missing from build: ${f}`);
+add('PASS', 'Third-party licence notices shipped in dist/licenses');
+const fontFiles = walk(dist, (p) => /\.(woff2?|ttf|otf)$/.test(p));
+add(fontFiles.length ? 'PASS' : 'FAIL', `Brand fonts bundled locally (${fontFiles.length} files, no remote font loading)`);
+for (const [icon, rel] of Object.entries(m.icons ?? {})) existsSync(join(dist, rel)) || add('FAIL', `Icon ${icon} missing`, rel);
+m.icons && Object.keys(m.icons).length === 4 ? add('PASS', 'Official extension icons 16/32/48/128 present') : add('FAIL', 'Extension icons missing');
 badLicense.length ? add('FAIL', 'Shipped dependency with unreviewed licence', badLicense.join(', ')) : add('PASS', 'Shipped dependency licences reviewed (permissive)', prodLicenses.join(', '));
 
 // ---------- Report ----------

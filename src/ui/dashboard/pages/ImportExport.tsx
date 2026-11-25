@@ -54,7 +54,7 @@ export function ImportExportPage({ store, adapter }: PageProps) {
         <section className="card stack" aria-labelledby="exp-h">
           <h2 id="exp-h"><Icon name="download" /> Export library</h2>
           <p className="muted">Downloads your {store.templates.length} templates and {store.folders.length} folders as a JSON file.</p>
-          <div className="callout small">Exported files are ordinary files on your computer. They are not encrypted and are not deleted when you delete data in the extension — store or remove them carefully.</div>
+          <div className="callout small">Exported files are ordinary files on your computer. They are not encrypted and are not deleted when you delete data in the extension, so store or remove them carefully.</div>
           <div>
             <button className="btn primary" disabled={!store.templates.length} onClick={async () => downloadJson(await exportLibrary(adapter), `kryz-quick-reply-library-${stamp()}.json`)}>
               <Icon name="download" /> Export templates
@@ -86,8 +86,8 @@ export function ImportExportPage({ store, adapter }: PageProps) {
                 <>
                   <fieldset style={{ border: 0, padding: 0, margin: 0 }} className="stack">
                     <legend className="label" style={{ fontWeight: 700, fontSize: 12.5 }}>How should it be added?</legend>
-                    <label className="check"><input type="radio" name="mode" checked={mode === 'merge'} onChange={() => setMode('merge')} /> <span><strong>Merge</strong> — add new templates, update ones with the same ID, keep everything else.</span></label>
-                    <label className="check"><input type="radio" name="mode" checked={mode === 'replace'} onChange={() => setMode('replace')} /> <span><strong>Replace</strong> — remove current templates and folders, then import.</span></label>
+                    <label className="check"><input type="radio" name="mode" checked={mode === 'merge'} onChange={() => setMode('merge')} /> <span><strong>Merge:</strong> add new templates, update ones with the same ID, keep everything else.</span></label>
+                    <label className="check"><input type="radio" name="mode" checked={mode === 'replace'} onChange={() => setMode('replace')} /> <span><strong>Replace:</strong> remove current templates and folders, then import.</span></label>
                   </fieldset>
                   <div className="row">
                     <button className="btn primary" onClick={() => (mode === 'replace' ? setConfirmReplace(true) : void apply())}>Import</button>

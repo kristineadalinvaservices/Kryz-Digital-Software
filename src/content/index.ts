@@ -240,7 +240,7 @@ interface Pending {
   async function fallbackCopy(text: string) {
     try {
       await navigator.clipboard.writeText(text);
-      toast(`${PRODUCT.name}: this field could not be filled automatically. The message was copied — paste it with Ctrl+V / Cmd+V.`);
+      toast(`${PRODUCT.name}: this field could not be filled automatically. The message was copied, so paste it with Ctrl+V / Cmd+V.`);
     } catch {
       toast(`${PRODUCT.name}: this field could not be filled automatically. Open the extension to copy the message.`);
     }

@@ -1,6 +1,6 @@
 # Kryz Quick Reply Terms of Use
 
-**DRAFT — version 2026-11-25-draft. Not yet reviewed by a lawyer. Requires product owner approval and legal review before publication.**
+**DRAFT, version 2026-11-25-draft. Not yet reviewed by a lawyer. Requires product owner approval and legal review before publication.**
 
 These Terms of Use govern your use of Kryz Quick Reply ("the extension"), provided by Kryz Digital Partners ("we", "us") as part of Kryz Digital Software. By accepting these terms in the extension you agree to them.
 

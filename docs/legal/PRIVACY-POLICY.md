@@ -1,6 +1,6 @@
 # Kryz Quick Reply Privacy Policy
 
-**DRAFT — version 2026-11-25-draft. Not yet reviewed by a lawyer. Requires product owner approval and legal review before publication.**
+**DRAFT, version 2026-11-25-draft. Not yet reviewed by a lawyer. Requires product owner approval and legal review before publication.**
 
 Kryz Quick Reply ("the extension") is a Google Chrome extension made by Kryz Digital Partners as part of Kryz Digital Software. This policy explains what the extension accesses, where your information is kept, and the choices you have.
 

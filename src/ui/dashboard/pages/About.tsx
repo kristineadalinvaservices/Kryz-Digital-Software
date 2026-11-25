@@ -1,5 +1,5 @@
 import { PRODUCT } from '../../../shared/constants';
-import { BrandLogo, OFFICIAL_LOGO_INSTALLED, ParentBadge } from '../../components/Brand';
+import { BrandLogo, ParentBadge } from '../../components/Brand';
 import type { PageProps } from './types';
 
 export function AboutPage(_props: PageProps) {
@@ -13,7 +13,7 @@ export function AboutPage(_props: PageProps) {
       </div>
       <div className="stack" style={{ gap: 20 }}>
         <section className="card stack">
-          <BrandLogo variant="full" height={48} />
+          <BrandLogo variant="full" height={90} />
           <ParentBadge />
           <h2>
             {PRODUCT.name} <span className="muted" style={{ fontWeight: 600, fontSize: 14 }}>v{version}</span>
@@ -22,8 +22,7 @@ export function AboutPage(_props: PageProps) {
             An official product of <strong>{PRODUCT.parentBrand}</strong>, part of the <strong>{PRODUCT.ecosystem}</strong> ecosystem.
           </p>
           <p className="accent-word" style={{ fontSize: 18 }}>{PRODUCT.tagline}</p>
-          <p className="muted">Save the messages you send again and again, personalize them in seconds, and insert them where you work — with your data kept on your device.</p>
-          {!OFFICIAL_LOGO_INSTALLED && <p className="small muted">Pre-release build: official logo files have not been installed yet.</p>}
+          <p className="muted">Save the messages you send again and again, personalize them in seconds, and insert them where you work, with your data kept on your device.</p>
         </section>
         <section className="card">
           <h3>Known limitations</h3>

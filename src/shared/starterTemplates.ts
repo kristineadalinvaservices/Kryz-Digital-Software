@@ -28,7 +28,7 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
     description: 'Short, personal note for a connection request (under 300 characters).',
     shortcut: '/connect',
     tags: ['linkedin', 'networking'],
-    body: 'Hi {{first_name}}, I came across your work at {{company}} and would like to connect. I work with founders on {{topic}} and enjoy learning from people in your field. — {{sender_name}}',
+    body: 'Hi {{first_name}}, I came across your work at {{company}} and would like to connect. I work with founders on {{topic}} and enjoy learning from people in your field. {{sender_name}}',
   },
   {
     folder: 'LinkedIn',

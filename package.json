@@ -17,6 +17,9 @@
     "check": "npm run typecheck && npm test && npm run build && npm run audit:security"
   },
   "dependencies": {
+    "@fontsource/instrument-serif": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/manrope": "5.3.0",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },

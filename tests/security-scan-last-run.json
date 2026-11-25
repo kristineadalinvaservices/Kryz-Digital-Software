@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25T21:02:54.520Z",
+  "date": "2026-11-25T22:26:23.365Z",
   "findings": [
     {
       "status": "PASS",
@@ -73,7 +73,7 @@
     },
     {
       "status": "PASS",
-      "check": "Secret scan: 97 files, no credentials found",
+      "check": "Secret scan: 105 files, no credentials found",
       "detail": ""
     },
     {
@@ -83,8 +83,23 @@
     },
     {
       "status": "PASS",
+      "check": "Third-party licence notices shipped in dist/licenses",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "Brand fonts bundled locally (10 files, no remote font loading)",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
+      "check": "Official extension icons 16/32/48/128 present",
+      "detail": ""
+    },
+    {
+      "status": "PASS",
       "check": "Shipped dependency licences reviewed (permissive)",
-      "detail": "react@19.3.1 (MIT), react-dom@19.3.1 (MIT), scheduler@0.28.0 (MIT)"
+      "detail": "@fontsource/instrument-serif@5.3.0 (OFL-1.1), @fontsource/inter@5.3.0 (OFL-1.1), @fontsource/manrope@5.3.0 (OFL-1.1), react@19.3.1 (MIT), react-dom@19.3.1 (MIT), scheduler@0.28.0 (MIT)"
     }
   ]
 }

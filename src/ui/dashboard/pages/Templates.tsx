@@ -167,7 +167,7 @@ export function TemplatesPage({ store, adapter, route, trash = false }: PageProp
                   <span>Sort</span>
                   <select className="select" style={{ width: 'auto' }} value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
                     <option value="smart">Pinned & favorites first</option>
-                    <option value="name">Name (A–Z)</option>
+                    <option value="name">Name (A to Z)</option>
                     <option value="updated">Recently updated</option>
                     <option value="created">Newest</option>
                     <option value="usage">Most used</option>

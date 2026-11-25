@@ -36,13 +36,12 @@ Installable ZIP for the Chrome Web Store: `npm run package` → `release/kryz-qu
 | `npm run typecheck` | TypeScript strict check |
 | `npm test` | 58 unit tests (Vitest + jsdom) |
 | `npm run test:e2e` | Loads the extension in Chromium and runs 29 end-to-end checks (needs Playwright + Chromium: `npx playwright install chromium` on your machine) |
-| `npm run audit:security` | Static security gate + WCAG contrast check on `dist/` |
+| `npm run audit:security` | Static security gate (19 checks) + WCAG contrast check on `dist/` |
 | `npm run package` | Build, security gate, ZIP, checksum, SBOM |
 | `npm run check` | typecheck + unit tests + build + security gate |
 
-## Official logo
-
-The official Kryz Digital Partners logo was **not available** when this build was made. Place the approved files in `brand/logo/` (see `brand/README.md`) and rebuild: the logo appears in every required location and extension icons (16/32/48/128) are generated automatically. Until then, no logo is shown and Chrome uses its default icon. We never draw a substitute.
+## Official brand
+Logo, icons, colours and fonts follow **Kryz Brand Guidelines v2** (files in `brand/`, details in BRAND.md). Brand fonts (Manrope, Instrument Serif, Inter) are bundled locally under the SIL Open Font License.
 
 ## Documentation
 

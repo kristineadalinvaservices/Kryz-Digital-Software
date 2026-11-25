@@ -24,7 +24,8 @@
 .editor-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
 .var-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
 .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; }
-.stat .value { font-size: 30px; font-weight: 800; letter-spacing: var(--tracking-tight); }
+.stat .value { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: var(--accent); }
+:root[data-theme='signature'] .stat .value { color: var(--kz-yellow); }
 .stat .label { color: var(--text-muted); font-size: 12.5px; font-weight: 600; }
 .bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; align-items: end; height: 160px; padding-top: 8px; }
 .bar { display: grid; justify-items: center; gap: 6px; align-self: stretch; grid-template-rows: 1fr auto auto; }
@@ -42,13 +43,15 @@
 .perm:first-child { border-top: 0; }
 .perm code { font-size: 12px; background: var(--surface-2); padding: 1px 6px; border-radius: 4px; }
 .welcome { max-width: 860px; margin: 0 auto; padding: 36px 24px 72px; }
-.welcome-hero { padding: 32px; border-radius: var(--r-xl); background: #141012; color: #f3e9ec; position: relative; overflow: hidden; margin-bottom: 24px; }
+.welcome-hero { padding: 36px; border-radius: var(--r-xl); background: #141012; color: #f3e9ec; box-shadow: var(--kz-glow); position: relative; overflow: hidden; margin-bottom: 24px; }
 .welcome-hero::after { content: ''; position: absolute; right: -80px; top: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(255,61,154,.45), transparent 65%); }
-.welcome-hero h1 { font-size: 44px; color: #ff3d9a; line-height: .95; letter-spacing: -0.04em; position: relative; z-index: 1; }
-.welcome-hero h1 .accent-word { color: #ff3d9a; font-weight: 400; }
-.welcome-hero p { color: #e2d4da; position: relative; z-index: 1; }
+.welcome-hero h1 { font-size: 46px; color: #fff9f7; line-height: 1; letter-spacing: -0.03em; position: relative; z-index: 1; }
+.welcome-hero h1 .accent-word { color: #ff3d9a; font-size: 1.12em; }
+.welcome-hero .hero-logo { position: relative; z-index: 1; margin: -28px 0 0 -30px; }
+.welcome-hero .eyebrow { position: relative; z-index: 1; color: #ffd23f; font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; margin: 0 0 10px; }
+.welcome-hero p { color: #bdaeb4; position: relative; z-index: 1; }
 .welcome-hero .tag { color: #ffd23f; font-weight: 800; }
-.welcome-hero .brand-lockup .parent { color: #c9bcc2; }
+.welcome-hero .brand-lockup .parent { color: #bdaeb4; }
 .commit-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .commit-list li { display: flex; gap: 10px; align-items: flex-start; }
 .commit-list li::before { content: ''; flex: none; width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--kz-gradient); }

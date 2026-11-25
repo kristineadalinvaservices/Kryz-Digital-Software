@@ -143,7 +143,7 @@ export function PrivacyPage({ store, adapter }: PageProps) {
             <a className="btn" href="#/legal/terms" target="_blank" rel="noopener">Terms of Use</a>
           </div>
           <p className="small muted" style={{ margin: 0 }}>
-            You acknowledged privacy version {store.consent.privacyAckVersion ?? '—'} on {store.consent.privacyAckAt ? new Date(store.consent.privacyAckAt).toLocaleString() : '—'} and accepted terms version {store.consent.termsAcceptedVersion ?? '—'} on {store.consent.termsAcceptedAt ? new Date(store.consent.termsAcceptedAt).toLocaleString() : '—'}.
+            You acknowledged privacy version {store.consent.privacyAckVersion ?? 'not recorded'} on {store.consent.privacyAckAt ? new Date(store.consent.privacyAckAt).toLocaleString() : 'not recorded'} and accepted terms version {store.consent.termsAcceptedVersion ?? 'not recorded'} on {store.consent.termsAcceptedAt ? new Date(store.consent.termsAcceptedAt).toLocaleString() : 'not recorded'}.
           </p>
           <div>
             <h3>Report a security concern</h3>

@@ -1,11 +1,13 @@
 /**
  * Official logo integration.
  *
- * The official Kryz Digital Partners logo files go in /brand/logo (see brand/README.md):
- *   logo-full-light.(svg|png)   full logo for light backgrounds
- *   logo-full-dark.(svg|png)    full logo for dark backgrounds
- *   symbol-light.(svg|png)      brand symbol for light backgrounds (small sizes)
- *   symbol-dark.(svg|png)       brand symbol for dark backgrounds (small sizes)
+ * Official Kryz Digital Partners files (Brand Guidelines v2, 20 Nov 2026), unmodified, in /brand/logo:
+ *   kryz-logo-3d-for-light.png       full logo, light backgrounds
+ *   kryz-logo-3d-glow-for-dark.png   full logo, dark backgrounds (main version)
+ *   kryz-mark.svg                    flat K mark, small sizes / light backgrounds
+ *   kryz-mark-3d.svg                 3D K mark, dark backgrounds
+ * PNGs are used for the full logo because the SVG versions load fonts from the internet,
+ * which the extension blocks (guidelines: "Where fonts can't load, use the PNG files").
  *
  * They are bundled at build time. If a file is missing we show NO mark at all — we never
  * draw, regenerate or substitute a logo. The product name is still shown as plain text.
@@ -23,19 +25,32 @@ function find(stem: string): string | null {
 }
 
 export const LOGO_ASSETS = {
-  fullLight: find('logo-full-light'),
-  fullDark: find('logo-full-dark'),
-  symbolLight: find('symbol-light'),
-  symbolDark: find('symbol-dark'),
+  fullLight: find('kryz-logo-3d-for-light'),
+  fullDark: find('kryz-logo-3d-glow-for-dark'),
+  symbolLight: find('kryz-mark'),
+  symbolDark: find('kryz-mark-3d'),
 };
 
 export const OFFICIAL_LOGO_INSTALLED = Boolean(LOGO_ASSETS.fullLight && LOGO_ASSETS.fullDark && LOGO_ASSETS.symbolLight && LOGO_ASSETS.symbolDark);
 
-/** Picks the light/dark variant with CSS so theme changes are instant. */
-export function BrandLogo({ variant, height }: { variant: 'full' | 'symbol'; height: number }) {
-  const light = variant === 'full' ? LOGO_ASSETS.fullLight : LOGO_ASSETS.symbolLight;
-  const dark = variant === 'full' ? LOGO_ASSETS.fullDark : LOGO_ASSETS.symbolDark;
+/**
+ * `on` = the background the logo sits on. "auto" follows the theme; "dark" forces the dark-background
+ * file (e.g. the always-dark onboarding hero). Guideline minimums: mark 24 px tall, full logo 140 px wide.
+ */
+export function BrandLogo({ variant, height, on = 'auto' }: { variant: 'full' | 'symbol'; height: number; on?: 'auto' | 'dark' | 'light' }) {
+  let light = variant === 'full' ? LOGO_ASSETS.fullLight : LOGO_ASSETS.symbolLight;
+  let dark = variant === 'full' ? LOGO_ASSETS.fullDark : LOGO_ASSETS.symbolDark;
+  if (on === 'dark') light = null;
+  if (on === 'light') dark = null;
   if (!light && !dark) return null;
+  if (on !== 'auto') {
+    const src = (light ?? dark)!;
+    return (
+      <span className="brand-logo brand-mark" style={{ height, display: 'inline-block' }}>
+        <img src={src} alt={variant === 'full' ? PRODUCT.parentBrand : ''} height={height} style={{ display: 'block' }} />
+      </span>
+    );
+  }
   return (
     <span className="brand-logo brand-mark" style={{ height, display: 'inline-block' }}>
       {light && <img className="logo-on-light" src={light} alt={variant === 'full' ? PRODUCT.parentBrand : ''} height={height} />}

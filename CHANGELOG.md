@@ -2,7 +2,13 @@
 
 All notable changes. Format: Keep a Changelog; versions follow SemVer.
 
-## [0.1.0] — 2026-11-25 (pre-release, not published)
+## [0.1.0] (pre-release, not published)
+### Brand (2026-11-25)
+- Official Kryz logo integrated (onboarding, popup, sidebar, About, empty states) and official extension icons 16/32/48/128.
+- Colours, radii and glow updated to Brand Guidelines v2; Light theme uses Warm White instead of pure white.
+- Manrope, Instrument Serif and Inter bundled locally (SIL OFL 1.1); licence notices shipped in `licenses/`.
+- Dashes removed from user-facing copy per brand voice.
+
 ### Added
 - Template library: create, edit, duplicate, delete with 30-day recovery, folders, tags, favorites, pins, search, five sort orders.
 - Dynamic variables with personalization form and live preview; sender name and meeting link from optional saved details.

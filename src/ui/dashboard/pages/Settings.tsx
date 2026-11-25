@@ -12,7 +12,7 @@ import type { PageProps } from './types';
 
 const THEMES: Array<{ value: ThemePreference; label: string; note: string }> = [
   { value: 'light', label: 'Light', note: 'Clean, minimal workspace.' },
-  { value: 'signature', label: 'Kryz Signature', note: 'Our full brand: ink, neon pink and yellow.' },
+  { value: 'signature', label: 'Kryz Signature', note: 'Our full brand: Kryz Black, Neon Pink and Bright Yellow.' },
   { value: 'system', label: 'System', note: 'Follows your device. Dark mode uses Kryz Signature.' },
 ];
 
@@ -106,10 +106,10 @@ export function SettingsPage({ store, adapter, route }: PageProps) {
                     border: '1px solid var(--border)',
                     background:
                       t.value === 'light'
-                        ? 'linear-gradient(90deg,#faf7f8 0 70%,#ff3d9a 70% 85%,#ffd23f 85%)'
+                        ? 'linear-gradient(90deg,#fff9f7 0 70%,#ff3d9a 70% 85%,#ffd23f 85%)'
                         : t.value === 'signature'
                           ? 'linear-gradient(90deg,#141012 0 70%,#ff3d9a 70% 85%,#ffd23f 85%)'
-                          : 'linear-gradient(90deg,#faf7f8 0 35%,#141012 35% 70%,#ff3d9a 70% 85%,#ffd23f 85%)',
+                          : 'linear-gradient(90deg,#fff9f7 0 35%,#141012 35% 70%,#ff3d9a 70% 85%,#ffd23f 85%)',
                   }}
                 />
                 <span className="small muted" id={`theme-note-${t.value}`}>{t.note}</span>
