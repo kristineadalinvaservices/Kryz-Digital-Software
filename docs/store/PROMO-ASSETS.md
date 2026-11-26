@@ -14,3 +14,6 @@ All assets must use the official Kryz logo files in `brand/source/` and the rule
 | Marquee (optional) | 1400×560 | PNG/JPEG | Hero layout from onboarding |
 
 Rules: no fake reviews, ratings, user counts or client names; demo data only (e.g. "Ana", "Acme Co"); text ≥ 24 px at 1280 width; keep logo clear space per guidelines; no Chrome/Google trademarks beyond permitted wording. Base captures: `npm run test:e2e` writes reference screenshots to `tests/e2e/screenshots/` (demo data).
+
+## Generated assets (2026-11-26)
+`docs/store/assets/`: `screenshot-1..5.png` (1280×800), `promo-small-440x280.png`, `promo-marquee-1400x560.png`. All 24-bit PNG (no alpha), made from the real extension with demo data (Maria, Acme Studio, Alex Rivera; example.com links), official logo and brand fonts. Regenerate: `npm run build && npm run build:e2e && node scripts/store-assets.mjs`, then flatten to RGB (see scripts/store-assets.mjs header).
