@@ -23,3 +23,4 @@ Last updated: 2026-11-25 · Version 0.1.0 · Status: **MVP feature-complete, NOT
 ## Log
 - 2026-11-25: Phases 1 to 9 implemented; all automated suites green.
 - 2026-11-25: Official logo pack and Brand Guidelines v2 integrated: logo in all locations, official extension icons, v2 colours, bundled Manrope/Instrument Serif/Inter, pill buttons, 22 px cards, dashes removed from UI copy. 58 unit, 29 e2e, 19 security, 27 contrast checks pass.
+- 2026-11-27: Separate `video-system/` added (video production docs and tools). Extension code unchanged.

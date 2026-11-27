@@ -1,0 +1,32 @@
+/* Kryz video graphics system. Values from brand/tokens.json (Guidelines v2). */
+@font-face { font-family: "Manrope"; font-weight: 800; src: url("../../fonts/Manrope-ExtraBold.ttf"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; src: url("../../fonts/InstrumentSerif-Italic.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("../../fonts/Inter-Regular.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("../../fonts/Inter-SemiBold.ttf"); }
+:root {
+  --black: #141012; --plum: #1E181B; --pink: #FF3D9A; --yellow: #FFD23F;
+  --soft: #F3E9EC; --warm: #FFF9F7; --rose: #BDAEB4;
+  --radius: 22px; --glow: 0 0 48px rgba(255,61,154,.55);
+  --ease-out: cubic-bezier(.16,1,.3,1); --ease-in: cubic-bezier(.7,0,.84,0);
+  --in: .45s; --out: .35s;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; background: transparent; overflow: hidden; }
+body { font-family: "Inter", sans-serif; color: var(--soft); -webkit-font-smoothing: antialiased; }
+body.opaque { background: var(--black); }
+.headline { font-family: "Manrope"; font-weight: 800; letter-spacing: -.01em; line-height: 1.02; }
+.accent { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; color: var(--pink); letter-spacing: 0; }
+.kw { color: var(--yellow); }
+.pill { display: inline-flex; align-items: center; gap: .5em; border-radius: 999px; padding: .55em 1.2em; font-family: "Inter"; font-weight: 600; }
+.card { background: var(--plum); border-radius: var(--radius); }
+.gradient { background: linear-gradient(135deg, var(--yellow) 0%, var(--black) 45%, var(--black) 60%, var(--pink) 100%); }
+/* Shared motion presets: names match Doc 3 */
+@keyframes rise-in { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@keyframes slide-in-left { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
+@keyframes pop-in { 0% { opacity: 0; transform: scale(.85); } 70% { opacity: 1; transform: scale(1.04); } 100% { transform: scale(1); } }
+@keyframes fade-out { to { opacity: 0; transform: translateY(-16px); } }
+@keyframes underline-sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes glow-pulse { 0%,100% { box-shadow: 0 0 24px rgba(255,61,154,.35); } 50% { box-shadow: 0 0 64px rgba(255,61,154,.7); } }
+@keyframes draw-box { from { clip-path: inset(0 100% 100% 0); } to { clip-path: inset(0 0 0 0); } }
+.enter { animation: var(--enter, rise-in) var(--in) var(--ease-out) both; animation-delay: var(--delay, 0s); }
+.exit-wrap { position: absolute; inset: 0; animation: fade-out var(--out) var(--ease-in) forwards; animation-delay: var(--exit-at, 999s); }

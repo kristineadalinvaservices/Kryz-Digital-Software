@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25T22:26:23.365Z",
+  "date": "2026-11-27T07:28:15.137Z",
   "findings": [
     {
       "status": "PASS",
@@ -73,7 +73,7 @@
     },
     {
       "status": "PASS",
-      "check": "Secret scan: 105 files, no credentials found",
+      "check": "Secret scan: 149 files, no credentials found",
       "detail": ""
     },
     {

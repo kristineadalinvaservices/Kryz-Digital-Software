@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* Highlight box for screen recordings. Pass the element rectangle in output pixels. */
+.box { position: absolute; left: var(--bx, 300px); top: var(--by, 500px); width: var(--bw, 480px); height: var(--bh, 120px);
+  border: 6px solid var(--yellow); border-radius: 16px; box-shadow: 0 0 0 9999px rgba(20,16,18,var(--dim, .45)), 0 0 30px rgba(255,210,63,.5);
+  animation: draw-box .4s var(--ease-out) both; }
+.label { position: absolute; left: var(--bx, 300px); top: calc(var(--by, 500px) + var(--bh, 120px) + 22px); font-size: 40px; color: var(--black);
+  background: var(--yellow); --enter: rise-in; --delay: .25s; }
+</style></head><body>
+<div class="exit-wrap" data-style="--bx:x;--by:y;--bw:w;--bh:h;--dim:dim">
+  <div class="box"></div>
+  <div class="label pill enter" data-field="label" data-optional></div>
+</div>
+<script>window.KVS_DEFAULTS = { label: 'Every enquiry lands here', duration: 3 };</script>
+<script src="kvs.js"></script></body></html>

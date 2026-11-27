@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* YouTube end screen 1920x1080, 20 s. Left and right boxes are left empty for YouTube's own video and subscribe elements. */
+body { background: var(--black); }
+.glow { position: absolute; inset: 0; background: radial-gradient(60% 60% at 50% 20%, rgba(255,61,154,.25), transparent 70%); }
+.logo-row { position: absolute; top: 90px; left: 0; right: 0; display: flex; justify-content: center; } .logo { width: 440px; }
+.slot { position: absolute; top: 380px; width: 720px; height: 405px; border-radius: var(--radius); border: 3px dashed rgba(189,174,180,.35); }
+.l { left: 150px; } .r { right: 150px; }
+.cta { position: absolute; bottom: 110px; width: 100%; text-align: center; font-size: 54px; color: var(--soft); }
+</style></head><body>
+<div class="glow"></div><div class="logo-row"><img class="logo enter" src="../../../brand/logo/kryz-logo-3d-glow-for-dark.png" alt=""></div>
+<div class="slot l"></div><div class="slot r"></div>
+<div class="cta headline enter" data-field="cta" style="--delay:.3s"></div>
+<script>window.KVS_DEFAULTS = { cta: "Watch this [next]", duration: 20 };</script>
+<script src="kvs.js"></script></body></html>

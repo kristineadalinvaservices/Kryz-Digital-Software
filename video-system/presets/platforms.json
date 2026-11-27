@@ -1,0 +1,12 @@
+{
+  "_note": "Working defaults. Verify each platform's current specs and safe zones before export (Doc 7, step V1). Safe zone values are margins in pixels at the given size.",
+  "_verified": "not yet verified against live platform docs",
+  "tiktok":         { "w": 1080, "h": 1920, "fps": 30, "safe": { "top": 160, "bottom": 480, "left": 60, "right": 180 }, "lufs": -14 },
+  "reels":          { "w": 1080, "h": 1920, "fps": 30, "safe": { "top": 220, "bottom": 420, "left": 60, "right": 120 }, "lufs": -14, "gridCrop": "center 1080x1440 stays readable" },
+  "fb_reel":        { "w": 1080, "h": 1920, "fps": 30, "safe": { "top": 220, "bottom": 420, "left": 60, "right": 120 }, "lufs": -14 },
+  "fb_feed_45":     { "w": 1080, "h": 1350, "fps": 30, "safe": { "top": 80, "bottom": 140, "left": 60, "right": 60 }, "lufs": -14 },
+  "square":         { "w": 1080, "h": 1080, "fps": 30, "safe": { "top": 80, "bottom": 120, "left": 60, "right": 60 }, "lufs": -14 },
+  "x_landscape":    { "w": 1920, "h": 1080, "fps": 30, "safe": { "top": 80, "bottom": 120, "left": 96, "right": 96 }, "lufs": -14 },
+  "shorts":         { "w": 1080, "h": 1920, "fps": 30, "safe": { "top": 200, "bottom": 400, "left": 60, "right": 140 }, "lufs": -14 },
+  "youtube":        { "w": 1920, "h": 1080, "fps": 30, "safe": { "top": 60, "bottom": 100, "left": 96, "right": 96 }, "lufs": -14 }
+}

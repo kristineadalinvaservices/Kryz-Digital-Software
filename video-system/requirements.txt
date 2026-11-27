@@ -1,0 +1,7 @@
+# Python 3.10+ and FFmpeg 6+ on PATH. Node 18+ with Playwright for graphics.
+fonttools==4.69.1
+brotli==1.2.1
+# Optional: transcription (downloads a model on first run)
+faster-whisper==1.2.1
+# Optional: automatic face centred reframing
+opencv-python-headless==5.1.0.95

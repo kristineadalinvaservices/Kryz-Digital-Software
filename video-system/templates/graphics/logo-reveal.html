@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* Animates the OFFICIAL logo file only (opacity, scale, glow behind it). The logo itself is never redrawn or recoloured. */
+body { background: var(--black); }
+.stage { position: absolute; inset: 0; display: grid; place-items: center; }
+.halo { position: absolute; width: 60vmin; height: 60vmin; border-radius: 50%; background: radial-gradient(circle, rgba(255,61,154,.45), transparent 65%);
+  animation: pop-in 1s var(--ease-out) both; }
+.logo { width: var(--lw, 62vmin); --enter: pop-in; --in: .8s; --delay: .2s; }
+.tag { position: absolute; bottom: 18vmin; font-family: "Instrument Serif"; font-style: italic; font-size: 5vmin; color: var(--soft); --delay: .9s; }
+</style></head><body>
+<div class="stage"><div class="halo"></div><img class="logo enter" data-field="logo" alt=""><div class="tag enter" data-field="tagline" data-optional></div></div>
+<script>window.KVS_DEFAULTS = { logo: '../../../brand/logo/kryz-logo-3d-glow-for-dark.png', tagline: 'One partner to run and grow your business.', duration: 2.5 };</script>
+<script src="kvs.js"></script></body></html>

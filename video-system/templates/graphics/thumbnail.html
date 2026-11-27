@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* YouTube thumbnail 1280x720. Max 5 words. Face right, text left. Readable at 168x94 (check in Doc 8, T4). */
+body { width: 1280px; height: 720px; }
+.photo { position: absolute; right: 0; bottom: 0; height: 100%; width: 55%; object-fit: cover; object-position: center top; }
+.fade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--black) 38%, rgba(20,16,18,.2) 70%, transparent); }
+.text { position: absolute; left: 64px; top: 0; bottom: 0; width: 62%; display: flex; flex-direction: column; justify-content: center; }
+.title { font-size: 112px; color: var(--warm); line-height: .98; }
+.title .kw { color: var(--yellow); }
+.badge { align-self: flex-start; margin-top: 30px; font-size: 32px; background: var(--pink); color: var(--black); }
+.mark { position: absolute; left: 64px; top: 48px; height: 56px; }
+</style></head><body class="opaque">
+<div class="gradient" style="position:absolute;inset:0;opacity:.55"></div>
+<img class="photo" data-field="photo" data-optional alt=""><div class="fade"></div>
+<img class="mark" src="../../../brand/logo/kryz-mark-3d.svg" alt="">
+<div class="text"><div class="title headline" data-field="title"></div><div class="badge pill" data-field="badge" data-optional></div></div>
+<script>window.KVS_DEFAULTS = { title: 'Stop *losing* leads', badge: '' };</script>
+<script src="kvs.js"></script></body></html>

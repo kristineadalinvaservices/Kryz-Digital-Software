@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+.wrap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: var(--v, center); align-items: center; padding: var(--pad, 220px 80px); text-align: center; }
+.kicker { font-family: "Inter"; font-weight: 600; font-size: 34px; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); margin-bottom: 26px; --delay: 0s; }
+.title { font-size: var(--size, 104px); color: var(--warm); max-width: 18ch; text-shadow: 0 6px 30px rgba(20,16,18,.6); --enter: pop-in; --in: .5s; --delay: .1s; }
+.title .accent { font-size: 1.12em; }
+.line { margin-top: 30px; width: 220px; height: 10px; border-radius: 10px; background: var(--yellow); transform-origin: left; animation: underline-sweep .5s var(--ease-out) .45s both; }
+</style></head><body>
+<div class="exit-wrap"><div class="wrap" data-style="--v:valign;--pad:pad;--size:size">
+  <div class="kicker enter" data-field="kicker" data-optional></div>
+  <div class="title headline enter" data-field="title"></div>
+  <div class="line"></div>
+</div></div>
+<script>window.KVS_DEFAULTS = { kicker: '', title: 'Stop chasing [every] detail', duration: 3 };</script>
+<script src="kvs.js"></script></body></html>

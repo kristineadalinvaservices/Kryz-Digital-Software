@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* 1080x1920. All text sits inside the centre 1080x1440 band so the Instagram profile grid crop keeps it readable. */
+body { width: 1080px; height: 1920px; }
+.bg { position: absolute; inset: 0; }
+.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,18,.1) 30%, rgba(20,16,18,.85) 80%); }
+.safe { position: absolute; left: 70px; right: 70px; top: 240px; height: 1440px; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 120px; }
+.series { align-self: flex-start; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; background: var(--pink); color: var(--black); margin-bottom: 30px; }
+.title { font-size: 118px; color: var(--warm); }
+.title .accent { font-size: 1.1em; }
+.bar { margin-top: 34px; width: 200px; height: 12px; border-radius: 12px; background: var(--yellow); }
+.mark { position: absolute; right: 70px; top: 270px; height: 84px; }
+</style></head><body class="opaque">
+<div class="bg gradient"></div><img class="photo" data-field="photo" data-optional alt=""><div class="shade"></div>
+<img class="mark" src="../../../brand/logo/kryz-mark-3d.svg" alt="">
+<div class="safe"><div class="series pill" data-field="series" data-optional></div><div class="title headline" data-field="title"></div><div class="bar"></div></div>
+<script>window.KVS_DEFAULTS = { series: 'Systems that sell', title: 'Your website needs a [next] step' };</script>
+<script src="kvs.js"></script></body></html>

@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+.wrap { position: absolute; left: 0; right: 0; bottom: var(--y, 360px); display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.lead { font-size: 44px; color: var(--soft); text-align: center; max-width: 20ch; text-shadow: 0 4px 20px rgba(20,16,18,.8); }
+.btn { font-size: 46px; background: var(--pink); color: var(--black); --enter: pop-in; --delay: .2s; animation: pop-in .45s var(--ease-out) .2s both, glow-pulse 1.6s ease-in-out .7s infinite; }
+</style></head><body>
+<div class="exit-wrap"><div class="wrap" data-style="--y:y">
+  <div class="lead headline enter" data-field="lead" data-optional></div>
+  <div class="btn pill" data-field="button"></div>
+</div></div>
+<script>window.KVS_DEFAULTS = { lead: 'Want this for your business?', button: 'Message SYSTEM for a walkthrough', duration: 4 };</script>
+<script src="kvs.js"></script></body></html>

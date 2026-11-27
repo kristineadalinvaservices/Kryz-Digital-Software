@@ -2,6 +2,10 @@
 
 All notable changes. Format: Keep a Changelog; versions follow SemVer.
 
+## Video system v0.1 (2026-11-27, separate from the extension)
+- Added `video-system/`: nine draft documents for approval (brand guide, effects library, 18 content type playbooks, automation, repurposing, Drive and tracker, QA, templates); the reference video report is blocked pending video files.
+- Working pipeline: dead air removal, loudness, reframing, branded captions, logo and graphics overlay; nine HTML motion graphic templates rendered to transparent video. Self test passes on a synthetic clip.
+
 ## [0.1.0] (pre-release, not published)
 ### Brand (2026-11-25)
 - Official Kryz logo integrated (onboarding, popup, sidebar, About, empty states) and official extension icons 16/32/48/128.

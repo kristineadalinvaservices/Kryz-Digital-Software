@@ -20,4 +20,4 @@ Chrome MV3 extension, local-first. Owner: Kryz Digital Partners (founder is not 
 `npm run check` and `npm run test:e2e` must pass before a commit is called done. Update PROGRESS.md and CHANGELOG.md each phase. Bump `POLICY_VERSIONS` in `src/shared/constants.ts` when legal text changes materially; add a migration in `src/storage/schema.ts` when the stored shape changes.
 
 ## Layout
-`src/shared` pure logic · `src/storage` adapter/schema/repository · `src/background` service worker · `src/content` expander · `src/ui` React (popup, dashboard, components, theme) · `tests/unit` · `tests/e2e` · `scripts` build/scan/package · `docs/legal` legal drafts rendered in-app.
+`src/shared` pure logic · `src/storage` adapter/schema/repository · `src/background` service worker · `src/content` expander · `src/ui` React (popup, dashboard, components, theme) · `tests/unit` · `tests/e2e` · `scripts` build/scan/package · `docs/legal` legal drafts rendered in-app · `video-system` separate video production system (docs, FFmpeg/Python scripts, HTML graphics), never bundled into the extension.

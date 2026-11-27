@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="kryz.css">
+<style>
+/* Default bottom 480px keeps it above the Reels/TikTok caption and button area. Pass y for 16:9 (about 120px). */
+.lt { position: absolute; left: var(--x, 72px); bottom: var(--y, 480px); display: flex; align-items: stretch; gap: 0; }
+.bar { width: 10px; border-radius: 6px; background: var(--pink); box-shadow: var(--glow); animation: pop-in .35s var(--ease-out) both; }
+.box { padding: 22px 30px 24px 26px; background: rgba(20,16,18,.88); border-radius: 0 var(--radius) var(--radius) 0; --enter: slide-in-left; --delay: .08s; }
+.name { font-size: 54px; color: var(--warm); }
+.role { margin-top: 8px; font-size: 30px; color: var(--yellow); font-family: "Inter"; font-weight: 600; letter-spacing: .02em; }
+</style></head><body>
+<div class="exit-wrap"><div class="lt" data-style="--x:x;--y:y">
+  <div class="bar"></div>
+  <div class="box enter"><div class="name headline" data-field="name"></div><div class="role" data-field="role" data-optional></div></div>
+</div></div>
+<script>window.KVS_DEFAULTS = { name: 'Kristine Adalin', role: 'Founder, Kryz Digital Partners', duration: 4 };</script>
+<script src="kvs.js"></script></body></html>
